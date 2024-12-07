@@ -21,9 +21,33 @@ for( var i=0; i<ceoList.length; i++)
 // subscribe//
 
 
+//navbar//
+let shopOffset = $('#shop').offset().top;
+$(window).scroll(function () { 
+    let wscroll = $(window).scrollTop();
+    if (wscroll > shopOffset) {
+        $('#mainNav').css('backgroundColor' , '#3b5d50de'); 
+        $('#btnUp').fadeIn(500);
+    }
+    else{
+        $('#mainNav').css('backgroundColor' , 'transparent');   
+        $('#btnUp').fadeOut(500);
+    }
+});
 
+    $('#btnUp').click(function () {
+        $(window).scrollTop(0);
+      })
+//loading screen//
+$(document).ready(function () {
+    $('#loading .spinner').fadeOut(2000 , function () {
+        $('#loading').fadeOut(1000 , function () {
+            $('#loading').remove();
+            $('body').css('overflow' , 'scroll')
+          });
+    });
+   
+    
 
-
-
-
+});
 
